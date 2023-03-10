@@ -1,6 +1,4 @@
 import os
-
-## developemt , production
 class Config:
     SECRET_KEY=os.urandom(32)
     @staticmethod
