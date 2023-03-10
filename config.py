@@ -12,7 +12,6 @@ class DevelopmentConfig(Config):
 
 class ProductionConfig(Config):
     DEBUG= False
-    # postgresql:://username:password@localhost:portnumber/dbname
     SQLALCHEMY_DATABASE_URI = "postgresql://kemo:12345@localhost:5432/project3"
 
 

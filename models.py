@@ -1,6 +1,4 @@
-#any operation related to database
 from flask_sqlalchemy import SQLAlchemy
-#create object from sqlalchemy
 db = SQLAlchemy()
 
 class Department(db.Model):
