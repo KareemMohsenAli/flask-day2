@@ -22,14 +22,3 @@ def student_delete(id):
     if res :
         return redirect(url_for("students_index"))
 
-def validateInputs(requestdict: dict):
-    errors = {}
-    if not requestdict["name"]:
-        errors["name"] = 'name required'
-
-    ## check email exists before
-    student = Student.query.filter_by(email=requestdict['email']).first()
-    if student:
-        errors["email"] = 'Email already exists'
-
-    return errors

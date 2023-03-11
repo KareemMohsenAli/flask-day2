@@ -1,0 +1,33 @@
+{% extends 'base.html'%}
+{% block content %}
+<link rel="stylesheet" href="{{url_for('static', filename='css/mystyle.css') }}">
+    <div>
+
+        <h1> All Deparments</h1>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Name</th>
+    <th scope="col">Show</th>
+    <th scope="col">Delete</th>
+    </tr>
+  </thead>
+    <tbody>
+        {% for dept in departments %}
+            <tr>
+                <td>{{dept.id}}</td>
+                  <td>{{dept.name}}</td>
+
+
+                  <td><a href="{{url_for('department_show', id=dept.id)}}" class="btn btn-info"> show</a></td>
+                  <td><a href="{{url_for('department_delete', id=dept.id)}}" class="btn btn-danger"> Delete</a></td>
+
+            </tr>
+        {% endfor %}
+
+    </tbody>
+</table>
+
+    </div>
+{% endblock %}
